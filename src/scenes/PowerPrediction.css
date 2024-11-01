@@ -1,0 +1,361 @@
+/* index.css or App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Main container */
+.container {
+  width: 100%; /* Full width of the screen */
+  max-width: 500px; /* Limit the maximum width */
+  height: 83%;
+  margin: 10px auto; /* Center the container */
+  border-radius: 12px;
+  /* background-image: linear-gradient(108deg, #f8991c 0%, #161515 100%); */
+  box-sizing: border-box;
+  /* padding-top:5px; */
+  padding: 0px;
+  overflow: hidden; /* Prevent scrolling if content exceeds the container */
+}
+
+/* Top bar for input and search */
+.top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 20px;
+  flex-wrap: wrap; /* Wrap items if needed */
+}
+
+.top-bar input {
+  width: 100%;
+  max-width: 300px; /* Adjusted width for responsiveness */
+  height: 44px; /* Reduced height */
+  background: #ebfffc;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding-left: 20px; /* Reduced padding */
+  color: #626262;
+  font-size: 16px; /* Reduced font size */
+  font-weight: 400;
+}
+
+.search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Reduced size */
+  height: 50px;
+  background: #ebfffc;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* Weather image styling */
+.weather-image {
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: center;
+}
+
+/* Weather temperature */
+.weather-temp {
+  display: flex;
+  justify-content: center;
+  color: rgb(155, 32, 32);
+  font-size: 40px; /* Reduced size */
+  font-weight: 400;
+  
+}
+
+/* Weather location */
+.weather-location {
+  display: flex;
+  justify-content: center;
+  color: rgb(155, 32, 32);
+  font-size: 30px; /* Reduced size */
+  font-weight: 500;
+}
+
+/* Data container */
+.data-container {
+  margin-top: 20px;
+  color:rgb(32, 2, 2);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap content if needed */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  gap:20px;
+}
+
+/* Element styling */
+.element {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Data text */
+.data {
+  font-size: 24px; /* Reduced size */
+  font-weight: 400;
+}
+
+/* Additional text */
+.text {
+  font-size: 16px; /* Reduced size */
+  font-weight: 400;
+}
+
+/* Icon styling */
+.icon {
+  margin-top: 5px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 600px) {
+  .top-bar input {
+    max-width: 250px; /* Further reduced size for mobile */
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .search-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .weather-temp {
+    font-size: 50px; /* Adjusted for smaller screens */
+  }
+
+  .weather-location {
+    font-size: 25px;
+  }
+
+  .data {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+.power-prediction {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-input {
+  transition: box-shadow 0.3s ease;
+}
+
+.autocomplete-input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.selected-location {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e0f7fa;
+  border-left: 5px solid #007BFF;
+}
+
+.suggestions-list {
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+
+.power-prediction {
+  background-color: #f8df97; /* White background for the main container */
+  color: #333; /* Dark text for contrast */
+  padding: 20px; /* Add some padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.autocomplete-input {
+  width: 100%; /* Full width for the input */
+  padding: 12px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  color: #333; /* Dark text color */
+  background-color: #ffffff; /* White background */
+}
+
+.suggestions-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 10px 0 0; /* Margin for spacing */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #ffffff; /* White background for suggestions */
+  max-height: 200px; /* Limit height of suggestions */
+  overflow-y: auto; /* Scroll if too many suggestions */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  width: 35%; /* Match the input width */
+}
+
+.suggestions-list li {
+  padding: 10px; /* Padding for list items */
+  cursor: pointer; /* Pointer cursor for clickable items */
+  border-bottom: 1px solid #eee; /* Light gray separator */
+  white-space: normal; /* Allow text to wrap */
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.generate-button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 15px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.generate-button:hover {
+  background-color: #45a049;
+}
+
+.prediction-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 20px; /* Space between grid items */
+  margin-top: 20px; /* Space above the grid */
+}
+
+.grid-item {
+  background-color: #ffffff; /* White background for contrast */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 12px; /* More rounded corners */
+  padding: 20px; /* Inner spacing */
+  text-align: center; /* Center text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.grid-item:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.grid-item h4 {
+  margin: 0; /* Remove default margin */
+  font-size: 20px; /* Font size for titles */
+  color: #333; /* Darker title color */
+}
+
+.grid-item p {
+  margin: 10px 0 0; /* Space above text */
+  font-size: 28px; /* Larger font for values */
+  font-weight: 900; /* Bold values for emphasis */
+  color: #555; /* Medium color for values */
+}
+
+.temp1 {
+  position: relative; /* Position relative for absolute overlay */
+  overflow: hidden; /* Hide overflow to prevent blur effect from showing outside */
+  filter: brightness(0.7) contrast(0.7);  
+}
+.humid1 {
+  position: relative; /* Position relative for absolute overlay */
+  overflow: hidden; /* Hide overflow to prevent blur effect from showing outside */
+  filter: brightness(0.7) contrast(0.7);  
+}
+
+.winds1 {
+  position: relative; /* Position relative for absolute overlay */
+  overflow: hidden; /* Hide overflow to prevent blur effect from showing outside */
+  filter: brightness(0.7) contrast(0.7);  
+}
+
+.windg1 {
+  position: relative; /* Position relative for absolute overlay */
+  overflow: hidden; /* Hide overflow to prevent blur effect from showing outside */
+  filter: brightness(0.7) contrast(0.7);  
+}
+
+.precip1 {
+  position: relative; /* Position relative for absolute overlay */
+  overflow: hidden; /* Hide overflow to prevent blur effect from showing outside */
+  filter: brightness(0.7) contrast(0.7);  
+}
+
+.snow1 {
+  position: relative; /* Position relative for absolute overlay */
+  overflow: hidden; /* Hide overflow to prevent blur effect from showing outside */
+  filter: brightness(0.7) contrast(0.7);  
+}
+
+.foreground-text {
+  position: relative; /* Position relative for layering above the background */
+  color: white; /* Text color for contrast */
+  z-index: 2; /* Ensure this is above the background */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add padding for better readability */
+  filter: brightness(1.2); /* Brighten the text */
+}
+
+.prediction-label {
+  font-weight: bold;
+}
+
+.prediction-container {
+  display: inline-block; 
+  padding: 4px 8px ;
+  border-radius: 8px;
+  background-color: #f0f4f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 8px; 
+  margin-top: 25px;
+
+}
+
+.prediction-text {
+  font-size: 18px;
+  color: #141b2d;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust for a darker or lighter effect */
+  z-index: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow to improve readability */
+}
+
